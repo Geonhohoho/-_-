@@ -2192,7 +2192,7 @@ def _render_initial_order_cost_tab(
 
     _n_releases = len(ts)
     _period_label = f"{ts['NP_RLSE_YMD'].min().strftime('%Y-%m-%d')} ~ {ts['NP_RLSE_YMD'].max().strftime('%Y-%m-%d')}" if _n_releases > 0 else ""
-    st.info(f"📅 분석 기간: **{_period_label}** (출시 {_n_releases}건)")
+    st.info(f"분석 기간: **{_period_label}** (출시 {_n_releases}건)")
 
     k1, k2, k3, k4 = st.columns(4)
     k1.metric("MD 총비용", format_won(md_total))
@@ -2316,7 +2316,7 @@ def _render_initial_order_cost_tab(
         st.markdown(
             f"""
             <div class="insight-card">
-                <strong>📊 MD 실제 발주와 비교하여 <span style="color:#E15759;font-size:1.1em">{savings_pct:.1f}%</span>의 감소</strong>
+                <strong>MD 실제 발주와 비교하여 <span style="color:#E15759;font-size:1.1em">{savings_pct:.1f}%</span>의 감소</strong>
                 ({format_won(savings)})
             </div>
             """,
@@ -2847,7 +2847,7 @@ def render_inventory_cost_page(
         st.caption("초도 물량 비용 비교·ML 예측 비교에 적용됩니다.")
         st.divider()
 
-    main_tab1, main_tab2, main_tab3 = st.tabs(["📊 초도 물량 비용 비교", "🔍 ML vs MD 예측 비교", "📦 연간 재고비용 시뮬레이션"])
+    main_tab1, main_tab2, main_tab3 = st.tabs(["초도 물량 비용 비교", "ML vs MD 예측 비교", "연간 재고비용 시뮬레이션"])
 
     with main_tab1:
         _render_initial_order_cost_tab(cost_ts, predictions_df, preorder_df, _cost_start, _cost_end)
